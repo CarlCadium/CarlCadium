@@ -1,37 +1,59 @@
 <!DOCTYPE html>
-<html lang="En">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Game Access</title>
+  <title>Secret Game Access</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
-    #download { display: none; margin-top: 20px; }
-    input { padding: 10px; width: 300px; font-size: 16px; }
-    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      margin-top: 100px; 
+    }
+    #download-section { 
+      display: none; 
+      margin-top: 20px; 
+    }
+    input { 
+      padding: 10px; 
+      width: 300px; 
+      font-size: 16px; 
+    }
+    button { 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      margin-top: 10px; 
+    }
   </style>
 </head>
 <body>
-  <h2>insert the Key</h2>
-  <input type="text" id="password" placeholder="PassKey..." />
+  <h2>Enter the passphrase to unlock the game</h2>
+  <input type="text" id="passphrase" placeholder="Passphrase..." />
   <br>
-  <button onclick="verificaPassword()">Access</button>
+  <button onclick="checkPassphrase()">Submit</button>
 
-  <div id="download">
-    <p>Access Granted, be free to download the game at:</p>
-    <a href="https://esempio.com/gioco.zip" download>
-      <button>Download the game</button>
+  <div id="download-section">
+    <p>Access granted! Click below to download the game:</p>
+    <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID" download>
+      <button>Download Game</button>
     </a>
   </div>
 
   <script>
-    const rightPassword = "theneighboriswatching"; //
+    // <-- set your secret passphrase here:
+    const correctPassphrase = "theneighboriswatching";
 
-    function verifyPassword() {
-      const input = document.getElementById("password").value.trim().toLowerCase();
-      if (input === RightPassword) {
-        document.getElementById("download").style.display = "block";
+    function checkPassphrase() {
+      const input = document
+        .getElementById("passphrase")
+        .value
+        .trim()
+        .toLowerCase();
+
+      if (input === correctPassphrase) {
+        // show the download button
+        document.getElementById("download-section").style.display = "block";
       } else {
-        alert("Wrong Key");
+        alert("Incorrect passphrase. Try again!");
       }
     }
   </script>
