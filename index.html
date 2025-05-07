@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="En">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Access</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
+    #download { display: none; margin-top: 20px; }
+    input { padding: 10px; width: 300px; font-size: 16px; }
+    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>insert the Key</h2>
+  <input type="text" id="password" placeholder="Parola chiave..." />
+  <br>
+  <button onclick="verificaPassword()">Access</button>
+
+  <div id="download">
+    <p>Access Granted, be free to download the game at:</p>
+    <a href="https://esempio.com/gioco.zip" download>
+      <button>Download the game</button>
+    </a>
+  </div>
+
+  <script>
+    const passwordCorretta = "bdcwapodzxnpasycyoqje"; //
+
+    function verificaPassword() {
+      const input = document.getElementById("password").value.trim().toLowerCase();
+      if (input === passwordCorretta) {
+        document.getElementById("download").style.display = "block";
+      } else {
+        alert("Wrong Key");
+      }
+    }
+  </script>
+</body>
+</html>
