@@ -12,7 +12,7 @@
 </head>
 <body>
   <h2>insert the Key</h2>
-  <input type="text" id="password" placeholder="Parola chiave..." />
+  <input type="text" id="password" placeholder="PassKey..." />
   <br>
   <button onclick="verificaPassword()">Access</button>
 
@@ -28,7 +28,7 @@
 
     function verificaPassword() {
       const input = document.getElementById("password").value.trim().toLowerCase();
-      if (input === passwordCorretta) {
+      if (input === RightPassword) {
         document.getElementById("download").style.display = "block";
       } else {
         alert("Wrong Key");
